@@ -1,7 +1,7 @@
 class Api::V1::CommentsController < Api::V1::BaseController
 
     def index
-        @comments = Comment.where(restaurant_id: params[:restaurant_id])
+        @comments = Comment.where(restaurant_id: params[:restaurant_id]).order('created_at DESC')
     end
 
     def create
