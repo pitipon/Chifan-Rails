@@ -43,6 +43,9 @@ rails server
 ##### ATTRIBUTES
 APP object look as follows, The dot notation indicates that the property is one level inside a hash.
 
+
+* * *
+
 #### ++Restaurant++
 
 ###### Get all Restaurant
@@ -91,6 +94,9 @@ curl --request PUT \
 curl --request DELETE \
   --url http://localhost:3000/api/v1/restaurants/7
 ```
+
+
+* * *
 
 #### ++Comment++
 
