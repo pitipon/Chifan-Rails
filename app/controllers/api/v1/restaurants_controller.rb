@@ -1,6 +1,6 @@
 class Api::V1::RestaurantsController < Api::V1::BaseController
     # acts_as_token_authentication_handler_for User, except: [ :index, :show ]
-    before_action :set_restaurant, only: [:edit, :update, :show, :destory]
+    before_action :set_restaurant, only: [:edit, :update, :show, :destroy]
 
     def index
         @restaurants = Restaurant.all
@@ -26,6 +26,12 @@ class Api::V1::RestaurantsController < Api::V1::BaseController
             render_error
         end
     end
+
+    def destroy
+        @restaurant.destroy
+        head :no_content
+        # No need to create a `destroy.json.jbuilder` view
+      end
 
     private
 
