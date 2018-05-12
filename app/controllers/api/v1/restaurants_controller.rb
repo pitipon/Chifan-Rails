@@ -28,9 +28,12 @@ class Api::V1::RestaurantsController < Api::V1::BaseController
     end
 
     def destroy
-        @restaurant.destroy
-        head :no_content
-        # No need to create a `destroy.json.jbuilder` view
+        if @restaurant.destroy
+            render json: { success: "deleted" }
+        else
+            render json: { error: "error"}
+        end
+            # No need to create a `destroy.json.jbuilder` view
       end
 
     private
